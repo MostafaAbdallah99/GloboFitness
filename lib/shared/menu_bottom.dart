@@ -5,44 +5,51 @@ import 'package:globo_fitness/training_session/training_sessions_screen.dart';
 import 'package:globo_fitness/weather/weather_screen.dart';
 import '../components/constants.dart' as constants;
 
-class MenuBottom extends StatelessWidget {
+class MenuBottom extends StatefulWidget {
+  final int selectedIndex;
   const MenuBottom({
     Key? key,
+    required this.selectedIndex,
   }) : super(key: key);
 
   @override
+  _MenuBottomState createState() => _MenuBottomState();
+}
+
+class _MenuBottomState extends State<MenuBottom> {
+  late final int selectedIndex = widget.selectedIndex;
+  @override
   Widget build(BuildContext context) {
-    int _currentIndex = 0;
     return BottomNavigationBar(
-      currentIndex: _currentIndex,
       onTap: (int index) {
-        switch (index) {
-          case 0:
-            _currentIndex = index;
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const IntroScreen()));
-            break;
-          case 1:
-            _currentIndex = index;
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const BmiScreen()));
-            break;
-          case 2:
-            _currentIndex = index;
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const WeatherScreen()));
-            break;
-          case 3:
-            _currentIndex = index;
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                    builder: (context) => const SessionsScreen()));
-            break;
-          default:
-        }
+        setState(() {
+          switch (index) {
+            case 0:
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const IntroScreen()));
+              break;
+            case 1:
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const BmiScreen()));
+              break;
+            case 2:
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const WeatherScreen()));
+              break;
+            case 3:
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const SessionsScreen()));
+              break;
+            default:
+          }
+        });
       },
       type: BottomNavigationBarType.fixed,
+      currentIndex: selectedIndex,
       items: [
         BottomNavigationBarItem(
             icon: const Icon(Icons.home), label: constants.menuTitles[0]),

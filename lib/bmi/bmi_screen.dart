@@ -29,7 +29,7 @@ class _BmiScreenState extends State<BmiScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const MenuBottom(),
+      bottomNavigationBar: const MenuBottom(selectedIndex: 1),
       drawer: const MenuDrawer(),
       appBar: AppBar(
         title: Text(constants.menuTitles[1]),

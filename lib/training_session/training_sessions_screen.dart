@@ -28,7 +28,7 @@ class _SessionsScreenState extends State<SessionsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const MenuBottom(),
+      bottomNavigationBar: const MenuBottom(selectedIndex: 3),
       appBar: AppBar(
         title: const Text(constants.trainingSessionAppBarName),
       ),

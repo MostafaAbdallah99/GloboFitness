@@ -17,7 +17,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: const MenuBottom(),
+      bottomNavigationBar: const MenuBottom(selectedIndex: 2),
       appBar: AppBar(
         title: Text(constants.menuTitles[2]),
       ),

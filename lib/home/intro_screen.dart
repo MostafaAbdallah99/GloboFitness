@@ -10,7 +10,7 @@ class IntroScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
-      bottomNavigationBar: const MenuBottom(),
+      bottomNavigationBar: const MenuBottom(selectedIndex: 0,),
       appBar: AppBar(
         title: const Text(constants.applicationName),
       ),
