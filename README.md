@@ -1,6 +1,6 @@
 # globo_fitness
 
-A new Flutter project.
+A flutter application that calculates BMI, uses weather API to get the weather of a city and uses shared preferences to save training sessions.
 
 ## Getting Started
 
